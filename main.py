@@ -11,7 +11,6 @@ from services.persistence.exercise_repository import init_db, get_users_exercise
 from streamlit_webrtc import webrtc_streamer, WebRtcMode
 from services.vision.exercise_video_processor import VideoProcessor
 from services.tracking.metrics import sync_metrics_update
-from google import genai
 from openai import OpenAI
 from services.coaching.llm import LLMCoach
 from services.coaching.tts import TextToSpeech
