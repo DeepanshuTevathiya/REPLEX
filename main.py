@@ -24,7 +24,7 @@ def main():
         
     st.set_page_config(
         page_icon=".\static\Coach_live_logo.png",
-        page_title="Coach Live",
+        page_title="REPLEX",
         initial_sidebar_state="expanded",
         layout="centered"
         )
@@ -68,7 +68,7 @@ def main():
                 st.session_state["username"] = None
                 st.rerun()
                 
-        st.markdown("<h1><img src='https://iili.io/CR3tnSV.md.png' width='80' style='vertical-align:middle;'>Coach Live</h1>", unsafe_allow_html=True)
+        st.markdown("<h1><img src='https://iili.io/CR3tnSV.md.png' width='80' style='vertical-align:middle;'>REPLEX</h1>", unsafe_allow_html=True)
         st.caption(f"👤 Login as **{st.session_state['username']}**")
 
         st.divider()

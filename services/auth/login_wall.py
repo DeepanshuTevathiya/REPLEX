@@ -8,7 +8,7 @@ def render_login_wall():
     st.markdown("""
 <div style="display:flex; align-items:center; justify-content: center; gap: 0px;">
     <img src="https://iili.io/CR3tnSV.md.png" width="100">
-    <h1 style="margin:0;">Coach Live</h1>
+    <h1 style="margin:0;">REPLEX</h1>
 </div>
 """, unsafe_allow_html=True)    
     st.markdown("## Your Realtime Ai Gym Trainer")
