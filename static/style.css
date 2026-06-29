@@ -1,0 +1,486 @@
+/* =========================================================
+   IMPORT FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* =========================================================
+   CSS VARIABLES
+========================================================= */
+
+:root {
+  --glass-bg:       rgba(255, 255, 255, 0.05);
+  --glass-border:   rgba(255, 255, 255, 0.10);
+  --glass-blur:     blur(14px);
+  --accent:         #7C6AFA;
+  --accent-glow:    rgba(124, 106, 250, 0.25);
+  --accent-light:   #9D90FC;
+  --surface:        rgba(255, 255, 255, 0.04);
+  --surface-hover:  rgba(255, 255, 255, 0.08);
+  --text-primary:   #F0EEF8;
+  --text-muted:     rgba(240, 238, 248, 0.50);
+  --success-glass:  rgba(52, 211, 153, 0.12);
+  --success-border: rgba(52, 211, 153, 0.30);
+  --radius:         12px;
+  --radius-sm:      8px;
+}
+
+/* =========================================================
+   GLOBAL THEME — mesh gradient background
+========================================================= */
+
+.stApp {
+  background-color: #0D0F1A;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 0%,  rgba(124, 106, 250, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 100%, rgba(80, 180, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 50%,  rgba(20, 18, 40, 0.90) 0%, transparent 100%);
+  color: var(--text-primary);
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+/* =========================================================
+   SIDEBAR — glass panel
+========================================================= */
+
+[data-testid="stSidebar"] {
+  background: rgba(13, 15, 26, 0.75) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--glass-border) !important;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.30);
+}
+
+[data-testid="stSidebar"] > div:first-child {
+  padding-top: 2rem;
+}
+
+/* Sidebar section labels */
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] .stMarkdownContainer p {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+/* Sidebar heading */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.block-container,
+.block-container * {
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+h1 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--text-primary) !important;
+  line-height: 1.2 !important;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--text-primary) !important;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+  text-align: center;
+}
+
+p, li {
+  color: var(--text-muted) !important;
+  line-height: 1.65 !important;
+}
+
+/* Subtitle / caption text */
+[data-testid="stMarkdownContainer"] p {
+  color: rgba(240, 238, 248, 0.55) !important;
+  font-size: 0.95rem !important;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.block-container {
+  padding: 48px 3rem !important;
+  max-width: 780px !important;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+/* Primary / default button */
+button,
+.stButton button,
+.stDownloadButton button,
+.MuiBox-root button {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+button:hover,
+.stButton button:hover,
+.stDownloadButton button:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 18px var(--accent-glow) !important;
+}
+
+/* Start Session / primary CTA — sidebar full-width button */
+[data-testid="stSidebar"] .stButton button {
+  width: 100% !important;
+  padding: 0.7rem 1rem !important;
+  background: linear-gradient(135deg, rgba(124, 106, 250, 0.30), rgba(80, 180, 255, 0.15)) !important;
+  border: 1px solid rgba(124, 106, 250, 0.40) !important;
+  border-radius: var(--radius-sm) !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  box-shadow: 0 0 20px rgba(124, 106, 250, 0.15) !important;
+  transition: all 0.25s ease !important;
+}
+
+[data-testid="stSidebar"] .stButton button:hover {
+  background: linear-gradient(135deg, rgba(124, 106, 250, 0.50), rgba(80, 180, 255, 0.25)) !important;
+  box-shadow: 0 0 32px rgba(124, 106, 250, 0.35) !important;
+  border-color: rgba(124, 106, 250, 0.70) !important;
+}
+
+/* Log Out button */
+[data-testid="stSidebar"] .stButton:first-of-type button {
+  background: transparent !important;
+  border-color: var(--glass-border) !important;
+  box-shadow: none !important;
+  font-size: 0.80rem !important;
+  padding: 0.4rem 0.75rem !important;
+}
+
+/* =========================================================
+   INPUTS — number, text, textarea
+========================================================= */
+
+input,
+textarea,
+[data-testid="stTextInput"] > div > div > input,
+[data-testid="stNumberInputContainer"] input {
+  background: var(--surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+  font-size: 0.9rem !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow) !important;
+  outline: none !important;
+}
+
+/* Number input stepper +/- buttons */
+[data-testid="stNumberInputContainer"] button {
+  background: var(--surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 1rem !important;
+}
+
+[data-testid="stNumberInputContainer"] button:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 10px var(--accent-glow) !important;
+}
+
+/* =========================================================
+   SELECTBOX / DROPDOWN
+========================================================= */
+
+[data-testid="stSelectbox"] > div > div,
+[data-baseweb="select"] > div {
+  background: var(--surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+[data-baseweb="popover"] ul {
+  background: rgba(18, 20, 35, 0.95) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+div[role="option"]:hover,
+div[role="menuitem"]:hover {
+  background: var(--surface-hover) !important;
+}
+
+/* =========================================================
+   METRICS — glass card style
+========================================================= */
+
+[data-testid="stMetric"] {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  padding: 1.1rem 1.3rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+[data-testid="stMetric"]:hover {
+  border-color: rgba(124, 106, 250, 0.35) !important;
+  box-shadow: 0 4px 24px rgba(124, 106, 250, 0.12) !important;
+}
+
+[data-testid="stMetric"] div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-testid="stMetricValue"] {
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+  letter-spacing: -0.02em !important;
+}
+
+[data-testid="stMetricLabel"] {
+  font-size: 0.78rem !important;
+  color: var(--text-muted) !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+[data-testid="stMetric"] div label p {
+  font-size: 0.80rem !important;
+  color: var(--text-muted) !important;
+}
+
+/* =========================================================
+   ALERT / STATUS BANNERS (coach message box)
+========================================================= */
+
+[data-testid="stAlertContainer"],
+.stAlertContainer,
+.stStatusContainer {
+  background: var(--success-glass) !important;
+  border: 1px solid var(--success-border) !important;
+  border-radius: var(--radius) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  padding: 0.9rem 1.2rem !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+[data-testid="stAlertContentInfo"] p {
+  color: rgba(52, 211, 153, 0.90) !important;
+  font-size: 0.90rem !important;
+}
+
+/* =========================================================
+   CONTAINERS / CARDS (generic glass card)
+========================================================= */
+
+.stExpander,
+.stPopover,
+.stForm,
+[data-testid="stForm"] {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.stForm {
+  margin-top: 1.5rem !important;
+  padding: 1.5rem 1.2rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+  color: var(--text-primary) !important;
+}
+
+/* =========================================================
+   DATAFRAME
+========================================================= */
+
+.stDataFrame,
+.stDataFrame div,
+.stDataFrameGlideDataEditor {
+  background: var(--surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.stTabs [data-baseweb="tab-list"] {
+  background: transparent !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  gap: 0.5rem !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+  background: transparent !important;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.stTabs [aria-selected="true"] {
+  background: var(--surface) !important;
+  color: var(--accent-light) !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+
+/* =========================================================
+   INTERACTIVE ELEMENTS (sliders, radio, checkbox, etc.)
+========================================================= */
+
+.stSlider,
+.stMultiselect,
+.stRadio,
+.stCheckbox,
+.stToggle,
+.stFileUploader,
+.stDateInput,
+.stTimeInput {
+  border-radius: var(--radius-sm) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+/* Slider thumb accent */
+[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 10px var(--accent-glow) !important;
+}
+
+/* Checkbox / radio accent */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  accent-color: var(--accent) !important;
+}
+
+/* =========================================================
+   SCROLLBAR (webkit)
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 106, 250, 0.30);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 106, 250, 0.55);
+}
+
+/* =========================================================
+   SIDEBAR NAV LINKS
+========================================================= */
+
+[data-testid="stSidebarNavLink"] {
+  border-radius: var(--radius-sm) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+  color: var(--text-muted) !important;
+  transition: background 0.2s ease, color 0.2s ease !important;
+}
+
+[data-testid="stSidebarNavLink"]:hover,
+[data-testid="stSidebarNavLink"][aria-selected="true"] {
+  background: var(--surface-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+/* =========================================================
+   MARKDOWN STRONG
+========================================================= */
+
+[data-testid="stMarkdownContainer"] strong {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+hr {
+  border: none !important;
+  border-top: 1px solid var(--glass-border) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* =========================================================
+   STATUS WIDGET
+========================================================= */
+
+[data-testid="stStatusWidget"] {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: 'Inter', 'AdobeClean', sans-serif !important;
+}
